@@ -1,5 +1,13 @@
-let cartProducts = JSON.parse(localStorage.getItem('cartProducts')) || [];
-console.log(cartProducts);
+const users = JSON.parse(localStorage.getItem('users'));
+const loginUserIndex = users.findIndex(user => user.isLogin === true);
+let cartProducts;
+if(loginUserIndex!=-1)
+{
+   cartProducts =   users[loginUserIndex].cartProducts || [];
+
+  console.log(cartProducts);
+}
+
 function removeItem(productId) {
   const productIndex = cartProducts.findIndex(product => product.id === productId);
 

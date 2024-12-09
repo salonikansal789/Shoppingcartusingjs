@@ -16,10 +16,22 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 function navigate(path)
 {
+  console.log(path)
+
   if(isLoggedIn())
   {
     window.location.href = path;
   }
+  else if(path =="../auth/login.html")
+    {
+      window.location.href = path;
+    
+    }
+else if(path =="../auth/signup.html")
+{
+  window.location.href = path;
+
+}
   else {
     alert('login please')
     console.log("login please")
@@ -44,26 +56,26 @@ document.addEventListener("DOMContentLoaded", () => {
 function isLoggedIn() {
   return localStorage.getItem("isLoggedIn") === "true";
 }
-function restrictPageAccess() {
-  const restrictedPages = ["/profile/profile.html", "/shop/shop.html", "/cart/cart.html"];
-  const currentPath = window.location.pathname;
+// function restrictPageAccess() {
+//   const restrictedPages = ["/profile/profile.html", "/shop/shop.html", "/cart/cart.html"];
+//   const currentPath = window.location.pathname;
 
-  if (restrictedPages.includes(currentPath) && !isLoggedIn()) {
-    alert("You need to log in to access this page!");
-    window.location.href = "/auth/login.html"; 
-  }
-}
-document.querySelectorAll("#js-navigation a").forEach((link) => {
-  link.addEventListener("click", (event) => {
+//   if (restrictedPages.includes(currentPath) && !isLoggedIn()) {
+//     alert("You need to log in to access this page!");
+//     window.location.href = "/auth/login.html"; 
+//   }
+// }
+// document.querySelectorAll("#js-navigation a").forEach((link) => {
+//   link.addEventListener("click", (event) => {
  
-    const restrictedPages = ["/profile/profile.html", "/shop/shop.html", "/cart/cart.html"];
-    const targetHref = new URL(link.href).pathname;
-    if (restrictedPages.includes(targetHref) && !isLoggedIn()) {
-      event.preventDefault(); 
-      alert("Your are not login. Login Please!");
-    }
+//     const restrictedPages = ["/profile/profile.html", "/shop/shop.html", "/cart/cart.html"];
+//     const targetHref = new URL(link.href).pathname;
+//     if (restrictedPages.includes(targetHref) && !isLoggedIn()) {
+//       event.preventDefault(); 
+//       alert("Your are not login. Login Please!");
+//     }
   
-  });
-});
-restrictPageAccess();
+//   });
+// });
+// restrictPageAccess();
 

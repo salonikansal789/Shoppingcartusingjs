@@ -47,14 +47,6 @@ async function fetchProducts() {
         }
     }
     function searchProductByButtons(category){
-        if(category==='mens clothing')
-        {
-            category="men's clothing";
-        }
-        if(category==='womens clothing')
-            {
-                category="women's clothing";
-            }
         const results = productsApiResponse.filter(product =>
         product.category.toLowerCase().includes(category)
           );

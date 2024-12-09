@@ -58,8 +58,14 @@ function updateProfile() {
     localStorage.setItem("isLoggedIn",false);
     const users = JSON.parse(localStorage.getItem('users'));
     const loginUserIndex = users.findIndex(user => user.isLogin === true);
-    users[loginUserIndex].isLogin = false;
-    localStorage.setItem('users', JSON.stringify(users));
+    const cartProducts = JSON.parse(localStorage.getItem('cartProducts')) || [];
+
+    if (loginUserIndex !== -1) {
+      users[loginUserIndex].isLogin = false; 
+      users[loginUserIndex].cartProducts=cartProducts;
+      localStorage.removeItem('cartProducts');
+        localStorage.setItem('users', JSON.stringify(users));
+    }
     alert('Logout successful!');
     console.log(users)
     window.location.href = "/auth/login.html";

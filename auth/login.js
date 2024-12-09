@@ -10,6 +10,7 @@ document.getElementById('loginForm').addEventListener('submit', function (e) {
       user.isLogin = true;
       localStorage.setItem('users', JSON.stringify(users));
       localStorage.setItem('isLoggedIn',true);
+      localStorage.setItem('currentUser', JSON.stringify(user));
       alert('Login successful!');
       window.location.href = "/shop/shop.html";
       email.value='';

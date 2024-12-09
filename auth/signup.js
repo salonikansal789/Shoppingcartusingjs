@@ -23,7 +23,7 @@ document.getElementById('signupForm').addEventListener('submit', function (e) {
       return;
     }
   
-    users.push({ name, email, password,isLogin:false});
+    users.push({ name, email, password,isLogin:false,cardProducts:[]});
     localStorage.setItem('users', JSON.stringify(users));
   
     alert('Signup successful!');
