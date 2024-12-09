@@ -1,0 +1,30 @@
+.auth-page{
+  display: flex;
+  flex-direction: column;
+}
+
+.form-container {
+    margin-top: 75px;
+    padding: 20px;
+    display: flex;
+    height: calc(100vh - 75px);
+  }
+form {
+    width: 100%;
+    min-width: 400px;
+    padding: 20px;
+  }
+  
+  form input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  .error-message {
+    color: red;
+    font-size: 14px;
+    margin: 5px 0;
+  }

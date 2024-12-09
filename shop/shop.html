@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="shop.css">
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+</head>
+<body>
+    <main class="shop-container">
+        <div id="header-container"></div> 
+        <div class="shop-main-container">
+        <div class="left-side">
+            <div class="filter-item">
+                <h4>Colors</h4>
+                <div class="color-div">
+                    <input type="checkbox" id="red" value="red" name="color">
+                    <label for="red">Red</label>
+                </div>
+                <div class="color-div">
+                    <input type="checkbox" id="blue" value="blue" name="color">
+                    <label for="blue">Blue</label>
+                </div>
+                <div class="color-div">
+                    <input type="checkbox" id="green" value="green" name="color">
+                    <label for="green">Green</label>
+                </div>
+                <div class="color-div">
+                    <input type="checkbox" id="black" value="black" name="color">
+                    <label for="black">Black</label>
+                </div>
+                <div class="color-div">
+                    <input type="checkbox" id="white" value="white" name="color">
+                    <label for="white">White</label>
+                </div>
+            </div>
+            <hr>
+               <div class="filter-item">
+                <h4>Size</h4>
+                <div>
+                    <input type="checkbox" id="small" value="small" name="size">
+                    <label for="small">Small</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="medium" value="medium" name="size">
+                    <label for="medium">Medium</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="large" value="large" name="size">
+                    <label for="large">Large</label>
+                </div>
+            </div>
+<hr>
+            <div class="filter-item">
+                <h4>Rating</h4>
+                <input type="range" id="rating" min="0" max="5" step="1">
+                <div class="rating-value">
+                    <span id="rating-min-value">0</span>
+                    <span class="select-rating"></span>
+                    <span id="rating-max-value">5</span>
+                </div>
+            </div>
+<hr>
+            <div class="filter-item">
+                <h4>Price Range</h4>
+                <div>
+                    <input type="radio" id="range-0-25" value="0-25">
+                    <label for="range-0-25">$0 to $25</label>
+                </div>
+                <div>
+                    <input type="radio" id="range-25-50" value="25-50">
+                    <label for="range-25-50">$25 to $50</label>
+                </div>
+                <div>
+                    <input type="radio" id="range-50-100" value="50-100">
+                    <label for="range-50-100">$50 to $100</label>
+                </div>
+                <div>
+                    <input type="radio" id="range-100-onwards" value="100-onwards">
+                    <label for="range-100-onwards">$100 onwards</label>
+                </div>
+            </div>
+        
+                <button class="apply-filter-btn" onclick="applyFilter()">Apply Filters</button>
+        </div>
+        </div>
+
+        <div class="right-side">
+            <div class="search-bar">
+                <div class="search-container">
+                    <i class="fa fa-search search-icon"></i>
+                    <input type="text" id="search-input" placeholder="Search products" onchange="searchProduct()"/>
+                </div>
+            </div>
+
+            <div class="categories">
+                <button class="category-btn" data-category="all" onClick="fetchProducts()">All</button>
+                <button class="category-btn" data-category="electronics" onClick="searchProductByButtons('electronics')">Electronics</button>
+                <button class="category-btn" data-category="jewelery" onClick="searchProductByButtons('jewelery')">Jewelery</button>
+                <button class="category-btn" data-category="men's clothing" onClick="searchProductByButtons('men clothing')">Men's Clothing</button>
+                <button class="category-btn" data-category="women's clothing" onClick="searchProductByButtons('women clothing')">Women's Clothing</button>
+            </div>
+            <div class="categories-container" id="categories-container">
+            </div>
+        </div>
+    </div>
+    </main>
+    <script>
+        window.cartProducts = [];
+    </script>
+    <script  src="./shop.js"> </script>
+    <script  src="../script.js"> </script>
+
+</body>
+</html>

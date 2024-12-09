@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <link rel="stylesheet" href="profile.css">
+  <link rel="stylesheet" href="../style.css">
+
+<body>
+    <main class="profile-main-container">
+      <div id="header-container"></div> 
+      <div class="profile-container">
+        <div class="profile-section">
+          <h2>My Profile</h2>
+          <div class="profile-form">
+            <input type="text" id="profile-name" placeholder="Enter your name" value=''>
+            <input type="email" id="profile-email" placeholder="Enter your email" value=''>
+            <button onclick="updateProfile()" class="btn profilebutton">Save Info</button>
+          </div>
+        </div>
+    
+        <div class="password-section">
+          <h2>Edit Password</h2>
+          <div class="password-form">
+            <input type="password" id="old-password" placeholder="Enter your old password">
+            <input type="password" id="new-password" placeholder="Enter your new password">
+            <input type="password" id="confirm-password" placeholder="Confirm your new password">
+            <button onclick="updatePassword()" class="btn profilebutton">Change Password</button>
+            <br>
+            <button onclick="logOut()" class="btn profilebutton">Logout</button>
+          </div>
+        </div>
+      </div>
+      </main>
+  <script src="./profile.js"></script>
+  <script src="../script.js"> </script>
+
+</body>
+</html>
+  
