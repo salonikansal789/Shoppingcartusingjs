@@ -174,7 +174,7 @@ function displaySearchProduct(products){
 
         </div>
            
-            <button class="add-to-cart-btn" onclick='addToCard(${product.id})>Add to Cart</button>  `;
+            <button class="add-to-cart-btn" onclick='addToCard(${product.id})'>Add to Cart</button>  `;
         const colorContainer = productCard.querySelector(".product-colors");
         product.colors.forEach(color => {
             const colorCircle = document.createElement("span");
